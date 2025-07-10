@@ -44,23 +44,6 @@ body {
   gap: 40px;
 }
 
-.icon-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icon-item img {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 4px;
-}
-
-.icon-item span {
-  font-size: 13px;
-  color: white;
-}
-
 /*  =========  NOTICIA  =========  */
 .hero-carousel {
   position: relative;
@@ -352,47 +335,6 @@ body {
   margin: 2rem 0;
 }
 
-/*  =========  ÚLTIMAS NOTICIAS  =========  */
-.ultimas-noticias {
-  background-color: #1c1c1c;
-  padding: 1rem;
-  margin-top: 2rem;
-  border-radius: 8px;
-  color: #fff;
-}
-
-.ultimas-noticias h3 {
-  color: #cf70a8;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.ultimas-noticias ul {
-  list-style: none;
-}
-
-.ultimas-noticias li {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-  align-items: flex-start;
-}
-
-.ultimas-noticias li::before {
-  content: "●";
-  color: #cf70a8;
-  font-size: 0.75rem;
-  margin-right: 0.25rem;
-}
-
-.hora {
-  color: #cf70a8;
-  font-size: 0.85rem;
-  min-width: 60px;
-  display: inline-block;
-}
-
 /*  =========  LATERAL  =========  */
 .contenido-principal {
   display: flex;
@@ -519,6 +461,83 @@ body {
 .shorts-puntitos img {
   width: auto;
   height: 15px;
+}
+
+/*  =========  DEPORTES  =========  */
+.deportes-destacados {
+  width: 100%;
+  clear: both;
+  margin-top: 40px;
+  padding: 20px;
+  background-image: url('img/Secciones/fondosecciones.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 442px;
+}
+
+.deportes-section {
+  margin-bottom: 1rem;
+}
+
+.deportes-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0px;
+  padding-left: 2rem;
+}
+
+.deportes-header .logo-deportes {
+  height: 44px;
+}
+
+.deportes-header h2 {
+  color: white;
+  font-size: 36px;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.linea-vertical {
+  width: 5px;
+  height: 30px;
+  background-color: white;
+  border-radius: 1px;
+  margin-left: 4px;
+}
+
+/* Carrusel externo con overflow oculto */
+.carrusel-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+/* Carrusel interno horizontal */
+.deportes-noticias {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+}
+
+/* Tarjeta de noticia */
+.noticia {
+  width: 431px;
+  flex-shrink: 0;
+}
+
+.noticia img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.noticia p {
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 24px;
 }
 
 /*  =========  AGENDA CULTURAL  =========  */
