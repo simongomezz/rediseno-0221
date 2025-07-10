@@ -62,7 +62,6 @@ body {
 }
 
 /*  =========  NOTICIA  =========  */
-
 .hero-carousel {
   position: relative;
   width: 100%;
@@ -455,6 +454,71 @@ body {
 
 .punto-rosa {
   color: #cf70a8;
+}
+
+/*  =========  SHORTS  =========  */
+.shorts-box {
+  padding: 1rem;
+  border-radius: 10px;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+  max-width: 440px;
+}
+
+.shorts-box h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.shorts-carousel {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.shorts-inner {
+  display: flex;
+  gap: 1rem;
+}
+
+.short {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+}
+
+.short img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.descripcion-shorts {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+.shorts-puntitos {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.shorts-puntitos img {
+  width: auto;
+  height: 15px;
 }
 
 /*  =========  AGENDA CULTURAL  =========  */
