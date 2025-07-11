@@ -8,6 +8,7 @@
 body {
   background-color: #171717;
   font-family: Arial, sans-serif;
+  padding-top: 125px;
 }
 
 /*  =========  HEADER / TOP-BAR  =========  */
@@ -17,15 +18,21 @@ body {
   justify-content: space-between;
   background-color: #000000;
   padding: 0 1rem;
-  height: 100px;
-  position: relative;
+  height: 125px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
-.topbar-tools {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-right: 20px;
+.menu-icon.oculto {
+  display: none;
+}
+
+.menu-icon img {
+  cursor: pointer;
+  margin-left: 20px;
 }
 
 .logo-container {
@@ -35,7 +42,14 @@ body {
 }
 
 .logo {
-  height: 50px;
+  height: 70px;
+}
+
+.topbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-right: 20px;
 }
 
 .icon-row {
@@ -463,36 +477,25 @@ body {
   height: 15px;
 }
 
-/*  =========  DEPORTES  =========  */
-.deportes-destacados {
-  width: 100%;
-  clear: both;
-  margin-top: 40px;
-  padding: 20px;
-  background-image: url('img/Secciones/fondosecciones.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 442px;
+/* ========= APARTADOS GENERALES ========= */
+
+.apartado {
+  margin-bottom: 2rem;
 }
 
-.deportes-section {
-  margin-bottom: 1rem;
-}
-
-.deportes-header {
+.apartado-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   padding-left: 2rem;
 }
 
-.deportes-header .logo-deportes {
+.apartado-logo {
   height: 44px;
 }
 
-.deportes-header h2 {
+.apartado-header h2 {
   color: white;
   font-size: 36px;
   margin: 0;
@@ -507,33 +510,119 @@ body {
   margin-left: 4px;
 }
 
-/* Carrusel externo con overflow oculto */
+.apartado-contenido {
+  width: 100%;
+  clear: both;
+  margin-top: 40px;
+  padding: 20px;
+  background-image: url('img/Secciones/fondosecciones.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 442px;
+  border-radius: 10px;
+}
+
+/* ========= POLICIALES ========= */
+
+.policiales-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 2rem;
+}
+
+.policiales-header h2 {
+  color: white;
+  font-size: 36px;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.seccion-policiales {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.noticia-policial-grande {
+  flex: 2;
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+}
+
+.noticia-policial-grande img {
+  width: 780px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.noticia-policial-grande h3 {
+  font-size: 36px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.noticia-policial-grande p {
+  font-size: 30px;
+  line-height: 1.2;
+  width: 785px;
+  height: 180px;
+}
+
+.noticias-policiales-chicas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.noticia-policial-chica {
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+}
+
+.noticia-policial-chica img {
+  width: 476px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.noticia-policial-chica p {
+  padding: 0.5rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ========= CARRUSEL ========= */
+
 .carrusel-wrapper {
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
 }
 
-/* Carrusel interno horizontal */
-.deportes-noticias {
+.carrusel-items {
   display: flex;
   gap: 25px;
   width: max-content;
 }
 
-/* Tarjeta de noticia */
-.noticia {
+.item {
   width: 431px;
   flex-shrink: 0;
 }
 
-.noticia img {
+.item img {
   width: 100%;
   border-radius: 10px;
   display: block;
 }
 
-.noticia p {
+.item p {
   color: white;
   font-weight: bold;
   margin-top: 10px;
@@ -546,14 +635,6 @@ body {
   text-align: center;
   color: #fff;
   background-color: #1c1c1c;
-}
-
-.agenda-cultural h2 {
-  font-size: 1.5rem;
-  color: #f078c2;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #f078c2;
-  display: inline-block;
 }
 
 #calendar {
