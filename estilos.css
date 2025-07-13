@@ -247,41 +247,100 @@ body {
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
+  left: -400px;
+  width: 400px;
   height: 100%;
-  background-color: #1c1c1c;
+  background-color: #222222;
   color: #fff;
   overflow-y: auto;
   padding: 1rem;
   transition: left 0.3s ease;
-  z-index: 1000;
-}
-
-.menu-icon {
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1100;
+  z-index: 10000;
 }
 
 .side-menu.active {
   left: 0;
+  transform: translateX(0);
+}
+
+.side-menu-header {
+  position: relative;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.side-menu-logo img {
+  height: 95px;
+  object-fit: contain;
+  margin-bottom: 30px;
 }
 
 #menu-close {
   background: none;
   border: none;
-  color: #fff;
-  font-size: 2rem;
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-close img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#menu-close:hover {
+  transform: scale(1.2);
+}
+
+.busqueda-contenedor {
+  position: relative;
+  width: 356px;
+  margin: 0 auto 30px auto;
+}
+
+.busqueda-menu {
+  width: 100%;
+  height: 36px;
+  border-radius: 15px;
+  background-color: rgba(105, 105, 105, 0.36);
+  border: none;
+  padding-left: 40px;
+  color: white;
+  font-size: 16px;
+}
+
+.busqueda-menu::placeholder {
+  color: #ccc;
+  font-weight: 300;
+}
+
+.busqueda-icono {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 .menu-list {
   list-style: none;
+}
+
+.menu-list a {
+  font-size: 20px;
 }
 
 .menu-link,
@@ -644,6 +703,7 @@ body {
   max-width: 1400px;
   margin-left: 0;
   margin-right: auto;
+  margin-top: 2rem;
   padding-top: 1rem;
 }
 
@@ -683,19 +743,67 @@ body {
   height: 640px;
   margin: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid white;
 }
 
+/* ENCABEZADO DEL CALENDARIO */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: span 7;
+  padding: 0 0.5rem;
+}
+
+.calendar-header h3 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+.calendar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.calendar-header .year {
+  font-weight: 300;
+  margin-left: 0.3rem;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  transition: transform 0.2s ease;
+}
+
+.calendar-header button:hover {
+  transform: scale(1.2);
+}
+
+/* DÍAS DEL CALENDARIO */
 .day,
 .day-header {
-  padding: 0.6rem;
-  text-align: center;
-  border-radius: 10px;
-  font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 20px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .day {
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  display: flex;
+  margin: 5px;
 }
 
 .day:hover {
@@ -710,8 +818,9 @@ body {
 
 .day-header {
   font-weight: bold;
-  font-size: 0.8rem;
-  opacity: 0.9;
+  font-size: 16px;
+  background-color: #B57390;
+  margin: 5px;
 }
 
 /* COLUMNA DERECHA: EVENTOS */
@@ -803,4 +912,58 @@ body {
   font-size: 0.8rem;
   padding: 0.3rem 0.6rem;
   border-radius: 12px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: linear-gradient(to top, #CA6B94, #ffffff00);
+  width: 100%;
+  height: 470px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  bottom: 0;
+}
+
+.footer .social {
+  margin-top: 20px;
+}
+
+.footer .social p {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.footer .icons img {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+}
+
+.footer .links {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.footer .links a {
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  margin: 40px;
+}
+
+.footer .brands {
+  margin-top: 20px;
+}
+
+.footer .brands img {
+  margin: 0 40px;
+  height: 80px;
 }

@@ -10,7 +10,7 @@
 <body>
   <header class="top-bar"> 
     <div class="menu-icon" id="menu-toggle" aria-label="Abrir menú">
-      <img src="img/menu.png" alt="Abrir menú">
+      <img src="img/Menu/menu.png" alt="Abrir menú">
     </div>
     <div class="logo-container">
       <img src="img/icono2.png" alt="Logo 0221" class="logo" />
@@ -83,20 +83,20 @@
     </div>
   </div>
 
-  <div class="redes-sociales">
-    <p>Contenido de redes:</p>
-    <div class="redes-iconos">
-      <img src="img/Redes/Instagram.png" alt="Instagram">
-      <img src="img/Redes/Youtube.png" alt="YouTube">
-      <img src="img/Redes/TikTok.png" alt="TikTok">
-      <img src="img/Redes/X.png" alt="X">
-      <img src="img/Redes/Facebook.png" alt="Facebook">
-      <img src="img/Redes/Linkedin.png" alt="LinkedIn">
-    </div>
-  </div>
-
   <nav class="side-menu" id="side-menu">
-    <button id="menu-close" aria-label="Cerrar menú">×</button>
+    <div class="side-menu-header">
+      <div class="side-menu-logo">
+        <img src="img/icono2.png" alt="Logo 0221">
+      </div>
+      <div class="busqueda-contenedor">
+        <input type="text" placeholder="Buscar" class="busqueda-menu" disabled>
+        <img src="img/Menu/lupa.png" alt="Buscar" class="busqueda-icono" />
+      </div>
+      <button id="menu-close" aria-label="Cerrar menú">
+        <img src="img/Menu/cerrarmenu.png" alt="Cerrar menú">
+      </button>
+    </div>
+
     <h2>SECCIONES</h2>
     <ul class="menu-list">
       <li><a href="region.html" class="menu-link">Región</a></li>
@@ -332,67 +332,108 @@
     </div>
   </section>
 
-<section class="agenda-cultural">
-  <div class="agenda-contenedor">
-    <div class="agenda-calendario">
-      <h2><img src="img/Secciones/logo-0221.png" alt="0221 Logo" class="apartado-logo"> Agenda</h2>
-      <div id="calendar"></div>
-      <p class="filtro-texto">Filtrá eventos por día.</p>
+  <section class="agenda-cultural">
+    <div class="apartado-header">
+      <img src="img/Secciones/logo-0221.png" alt="0221 Logo" class="apartado-logo">
+      <div class="linea-vertical"></div>
+      <h2>Agenda</h2>
     </div>
 
-    <div class="agenda-eventos">
-      <h3><span class="punto-rosa">●</span> Eventos más esperados del mes</h3>
+    <div class="agenda-contenedor">
+      <div class="agenda-calendario">
+        <div id="calendar">
+          <div class="calendar-header">
+            <div class="calendar-title">
+              <h3>Junio <span class="year">2025</span></h3>
+              <button class="inline-arrow">❯</button>
+            </div>
 
-      <div class="evento">
-        <div class="evento-dia">
-          <strong>10</strong>
-          <span>junio</span>
+            <div class="calendar-arrows">
+              <button class="arrow prev-month">❮</button>
+              <button class="arrow next-month">❯</button>
+            </div>
+          </div>
         </div>
-        <div class="evento-detalle">
-          <p><strong>Feria del Vino de la Costa</strong><br>
-          Se celebrará en el Gimnasio Municipal (9 y 169) con entrada libre y gratuita.</p>
-          <span class="evento-hora">16:00 pm</span>
-        </div>
+        <p class="filtro-texto">Filtrá eventos por día.</p>
       </div>
 
-      <div class="evento">
-        <div class="evento-dia">
-          <strong>15</strong>
-          <span>junio</span>
+      <div class="agenda-eventos">
+        <h3><span class="punto-rosa">●</span> Eventos más esperados del mes</h3>
+        <div class="evento">
+          <div class="evento-dia">
+            <strong>10</strong>
+            <span>junio</span>
+          </div>
+          <div class="evento-detalle">
+            <p><strong>Feria del Vino de la Costa</strong><br>
+            Se celebrará en el Gimnasio Municipal (9 y 169) con entrada libre y gratuita.</p>
+            <span class="evento-hora">16:00 pm</span>
+          </div>
         </div>
-        <div class="evento-detalle">
-          <p><strong>Festival Ribera Música</strong><br>
-          Evento que combina música en vivo, gastronomía y compromiso social en un entorno natural a la vera del río.</p>
-          <span class="evento-hora">18:00 pm</span>
-        </div>
-      </div>
 
-      <div class="evento">
-        <div class="evento-dia">
-          <strong>20</strong>
-          <span>junio</span>
+        <div class="evento">
+          <div class="evento-dia">
+            <strong>15</strong>
+            <span>junio</span>
+          </div>
+          <div class="evento-detalle">
+            <p><strong>Festival Ribera Música</strong><br>
+            Evento que combina música en vivo, gastronomía y compromiso social en un entorno natural a la vera del río.</p>
+            <span class="evento-hora">18:00 pm</span>
+          </div>
         </div>
-        <div class="evento-detalle">
-          <p><strong>Acto por Día de la Bandera</strong><br>
-          En la República de los Niños, donde estudiantes de cuarto grado realizan la promesa de lealtad a la bandera.</p>
-          <span class="evento-hora">13:00 pm</span>
-        </div>
-      </div>
 
-      <div class="evento">
-        <div class="evento-dia">
-          <strong>29</strong>
-          <span>junio</span>
+        <div class="evento">
+          <div class="evento-dia">
+            <strong>20</strong>
+            <span>junio</span>
+          </div>
+          <div class="evento-detalle">
+            <p><strong>Acto por Día de la Bandera</strong><br>
+            En la República de los Niños, donde estudiantes de cuarto grado realizan la promesa de lealtad a la bandera.</p>
+            <span class="evento-hora">13:00 pm</span>
+          </div>
         </div>
-        <div class="evento-detalle">
-          <p><strong>Feria del Libro Regional</strong><br>
-          Pasaje Dardo Rocha, ubicado en las calles 50 entre 6 y 7 de La Plata. Entrada libre y gratuita.</p>
-          <span class="evento-hora">16:00 pm</span>
+
+        <div class="evento">
+          <div class="evento-dia">
+            <strong>29</strong>
+            <span>junio</span>
+          </div>
+          <div class="evento-detalle">
+            <p><strong>Feria del Libro Regional</strong><br>
+            Pasaje Dardo Rocha, ubicado en las calles 50 entre 6 y 7 de La Plata. Entrada libre y gratuita.</p>
+            <span class="evento-hora">16:00 pm</span>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="social">
+    <p>Seguinos en todos lados!</p>
+    <div class="icons">
+      <img src="img/Footer/Instagram.png" alt="Instagram">
+      <img src="img/Footer/Youtube.png" alt="YouTube">
+      <img src="img/Footer/TikTok.png" alt="TikTok">
+      <img src="img/Footer/X.png" alt="X">
+      <img src="img/Footer/Facebook.png" alt="Facebook">
+      <img src="img/Footer/Linkedin.png" alt="LinkedIn">
     </div>
   </div>
-</section>
+
+  <div class="links">
+    <a href="#">Términos y Condiciones</a>
+    <a href="#">Políticas de privacidad</a>
+  </div>
+
+  <div class="brands">
+    <img src="img/Footer/logoadepa.png" alt="ADEPA">
+    <img src="img/Footer/logo0221.png" alt="0221.com.ar">
+    <img src="img/Footer/logoaglp.png" alt="AGLP">
+  </div>
+</footer>
 
   <script src="script.js"></script>
 </body>
