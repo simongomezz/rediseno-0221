@@ -8,17 +8,16 @@ const sideMenu = document.getElementById('side-menu');
 menuToggle.addEventListener('click', () => {
   sideMenu.classList.add('active');
   document.body.classList.add('menu-open');
-  menuToggle.classList.add('oculto'); // Oculta el ícono
+  menuToggle.classList.add('oculto');
 });
 
 // Cerrar menú
 menuClose.addEventListener('click', () => {
   sideMenu.classList.remove('active');
   document.body.classList.remove('menu-open');
-  menuToggle.classList.remove('oculto'); // Vuelve a mostrarlo
+  menuToggle.classList.remove('oculto');
 });
 
-// Cerrar menú solo cuando se hace clic en un enlace que lleva a otra página
 document.querySelectorAll('.menu-link:not(.toggle-submenu), .submenu-link').forEach(link => {
   link.addEventListener('click', () => {
     sideMenu.classList.remove('active');
@@ -30,13 +29,13 @@ document.querySelectorAll('.menu-link:not(.toggle-submenu), .submenu-link').forE
 // Toggle de submenús
 document.querySelectorAll('.toggle-submenu').forEach(toggle => {
   toggle.addEventListener('click', (e) => {
-    e.preventDefault(); // Evita navegación
+    e.preventDefault();
 
     const targetId = toggle.getAttribute('data-target');
     const submenu = document.getElementById(targetId);
 
     submenu.classList.toggle('show');
-    toggle.querySelector('.arrow').classList.toggle('rotated');
+    toggle.classList.toggle('active');
   });
 });
 
