@@ -97,22 +97,49 @@
       </button>
     </div>
 
-    <h2>SECCIONES</h2>
     <ul class="menu-list">
-      <li><a href="region.html" class="menu-link">Región</a></li>
-      <li><a href="la-plata.html" class="submenu-link">La Plata</a></li>
-      <li><a href="berisso.html" class="submenu-link">Berisso</a></li>
-      <li><a href="ensenada.html" class="submenu-link">Ensenada</a></li>
-      <li><a href="deportes.html" class="menu-link">Deportes</a></li>
-      <li><a href="musica.html" class="menu-link">Música</a></li>
-      <li><a href="arte.html" class="menu-link">Arte</a></li>
-      <li><a href="cultural.html" class="menu-link">Cultural</a></li>
-      <li><a href="gastronomia.html" class="menu-link">Gastronomía</a></li>
+      <li class="menu-title">Secciones</li>
       <li><a href="universidades.html" class="menu-link">Universidades</a></li>
+      <li class="menu-divider"></li>
+      <li><a href="deportes.html" class="menu-link">Deportes</a></li>
+      <li class="menu-divider"></li>
       <li><a href="policiales.html" class="menu-link">Policiales</a></li>
-      <li><a href="historia.html" class="menu-link">Historia</a></li>
-      <li><a href="nuestra-ciudad.html" class="submenu-link">Nuestra ciudad</a></li>
-      <li><a href="personajes.html" class="submenu-link">Personajes</a></li>
+      <li class="menu-divider"></li>
+
+      <!-- Grupo: ¿Te gusta el arte? -->
+      <li>
+        <a href="#" class="menu-link toggle-submenu" data-target="arte-submenu">
+          ¿Te gusta el arte?
+        </a>
+        <ul class="submenu hidden" id="arte-submenu">
+          <li><a href="musica.html" class="submenu-link">Música</a></li>
+          <li><a href="arte.html" class="submenu-link">Muestras</a></li>
+        </ul>
+      </li>
+      <li class="menu-divider"></li>
+      <!-- Grupo: Actividades -->
+      <li>
+        <a href="#" class="menu-link toggle-submenu" data-target="actividades-submenu">
+          Actividades
+        </a>
+        <ul class="submenu hidden" id="actividades-submenu">
+          <li><a href="gastronomia.html" class="submenu-link">Gastronomía</a></li>
+          <li><a href="#" class="submenu-link">Ferias</a></li>
+          <li><a href="#" class="submenu-link">Recitales</a></li>
+        </ul>
+      </li>
+      <li class="menu-divider"></li>
+
+      <!-- Grupo: Historia -->
+      <li>
+        <a href="#" class="menu-link toggle-submenu" data-target="historia-submenu">
+          Historia
+        </a>
+        <ul class="submenu hidden" id="historia-submenu">
+          <li><a href="nuestra-ciudad.html" class="submenu-link">Nuestra ciudad</a></li>
+          <li><a href="#" class="submenu-link">Un día como hoy</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 

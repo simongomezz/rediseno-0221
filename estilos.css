@@ -242,8 +242,7 @@ body {
   transform: scale(1.1);
   background-color: #2a2a2a;
 }
-
-/*  =========  MENÚ LATERAL  =========  */
+/* =========  MENÚ LATERAL  ========= */
 .side-menu {
   position: fixed;
   top: 0;
@@ -337,19 +336,27 @@ body {
 
 .menu-list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu-list a {
   font-size: 20px;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
 .menu-link,
 .submenu-link {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 0;
   transition: color 0.3s;
+  font-size: 1.05rem;
+  font-weight: bold;
 }
 
 .menu-link:hover,
@@ -359,7 +366,66 @@ body {
 
 .submenu-link {
   padding-left: 1rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+}
+
+.menu-divider {
+  height: 2px;
+  background-color: #ffffff;
+  margin: 1rem 0;
+}
+
+.menu-title:first-of-type {
+  margin-left: 0;
+  margin-bottom: 40px;
+  font-size: 24px;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.menu-group .menu-title {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.menu-link span,
+.submenu-link span {
+  display: none;
+}
+
+.menu-link::after,
+.submenu-link::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url('img/Menu/flecha.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.submenu {
+  padding-left: 1rem;
+  display: none;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+.submenu.show {
+  display: block;
+}
+
+/* Flecha rotada cuando submenu está abierto */
+.toggle-submenu.active::after {
+  transform: rotate(90deg);
+}
+
+.hidden {
+  display: none;
 }
 
 /*  =========  LISTA DE NOTICIAS  =========  */
@@ -537,7 +603,6 @@ body {
 }
 
 /* ========= APARTADOS GENERALES ========= */
-
 .apartado {
   margin-bottom: 2rem;
 }
