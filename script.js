@@ -30,10 +30,8 @@ document.querySelectorAll('.menu-link:not(.toggle-submenu), .submenu-link').forE
 document.querySelectorAll('.toggle-submenu').forEach(toggle => {
   toggle.addEventListener('click', (e) => {
     e.preventDefault();
-
     const targetId = toggle.getAttribute('data-target');
     const submenu = document.getElementById(targetId);
-
     submenu.classList.toggle('show');
     toggle.classList.toggle('active');
   });
@@ -70,7 +68,7 @@ for (let i = 1; i <= totalDays; i++) {
   });
 
   calendar.appendChild(day);
-};
+}
 
 // ================== CARRUSEL CON BAJADA ==================
 
@@ -95,16 +93,38 @@ const bajadas = [
 function updateCarousel() {
   const width = carouselInner.clientWidth;
   carouselInner.style.transform = `translateX(-${currentIndex * width}px)`;
-  bajadaTexto.textContent = bajadas[currentIndex];
+
+  if (bajadaTexto) {
+    bajadaTexto.textContent = bajadas[currentIndex];
+  }
 }
 
 // Inicialización
 updateCarousel();
 
+// Autoplay del carrusel cada 5 segundos
+let autoplayInterval = setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateCarousel();
+}, 5000);
+
+// Pausar autoplay mientras se arrastra
+function pauseAutoplay() {
+  clearInterval(autoplayInterval);
+}
+
+function resumeAutoplay() {
+  autoplayInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }, 5000);
+}
+
 // Eventos de arrastre para mouse
 carouselInner.addEventListener('mousedown', (e) => {
   isDragging = true;
   startX = e.clientX;
+  pauseAutoplay();
 });
 
 document.addEventListener('mouseup', (e) => {
@@ -120,6 +140,7 @@ document.addEventListener('mouseup', (e) => {
     }
 
     updateCarousel();
+    resumeAutoplay();
   }
 });
 
@@ -134,6 +155,7 @@ document.addEventListener('mousemove', (e) => {
 carouselInner.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
   isDragging = true;
+  pauseAutoplay();
 });
 
 carouselInner.addEventListener('touchend', (e) => {
@@ -149,6 +171,7 @@ carouselInner.addEventListener('touchend', (e) => {
     }
 
     updateCarousel();
+    resumeAutoplay();
   }
 });
 
@@ -160,16 +183,31 @@ carouselInner.addEventListener('touchmove', (e) => {
 });
 
 // ================== MODAL DE REGIÓN ==================
-
 window.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('regionModal');
   const botones = document.querySelectorAll('.region-btn');
+  const regionDisplay = document.querySelector('.region-display');
+
+  const regionesLegibles = {
+    'la-plata': 'La Plata'
+  };
 
   botones.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (btn.dataset.region === 'la-plata') {
+      const region = btn.dataset.region;
+
+      // Solo actúa si se eligió "la-plata"
+      if (region === 'la-plata') {
         modal.style.display = 'none';
+        regionDisplay.textContent = `Tu región: ${regionesLegibles[region]}`;
+        regionDisplay.style.display = 'flex';
       }
     });
+  });
+
+  // Al hacer clic en "Tu región: La Plata", vuelve a mostrar el modal
+  regionDisplay.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    regionDisplay.style.display = 'none';
   });
 });
