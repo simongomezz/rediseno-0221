@@ -101,7 +101,6 @@ function updateCarousel() {
 // Inicialización
 updateCarousel();
 
-
 // Eventos de arrastre para mouse
 carouselInner.addEventListener('mousedown', (e) => {
   isDragging = true;
@@ -131,7 +130,6 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
-
 // Eventos de arrastre para touch
 carouselInner.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
@@ -159,4 +157,19 @@ carouselInner.addEventListener('touchmove', (e) => {
     const moved = e.touches[0].clientX - startX;
     carouselInner.style.transform = `translateX(${-currentIndex * carouselInner.clientWidth + moved}px)`;
   }
+});
+
+// ================== MODAL DE REGIÓN ==================
+
+window.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('regionModal');
+  const botones = document.querySelectorAll('.region-btn');
+
+  botones.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.region === 'la-plata') {
+        modal.style.display = 'none';
+      }
+    });
+  });
 });

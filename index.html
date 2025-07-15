@@ -16,6 +16,7 @@
       <img src="img/icono.png" alt="Logo 0221" class="logo" />
     </div>
     <div class="topbar-tools">
+      <div class="region-display">Tu región: La Plata</div>
       <div class="icon-row"></div>
     </div>
   </header>
@@ -486,4 +487,25 @@
 
   <script src="script.js"></script>
 </body>
+
+<div id="regionModal" class="region-modal">
+  <div class="region-modal-content">
+    <p class="region-modal-titulo">Hola, antes de continuar:</p>
+    <p class="region-modal-subtitulo">¿Qué región te interesa ver?</p>
+
+    <div class="region-botones-grupo">
+      <div class="region-botones fila-1">
+        <button class="region-btn" data-region="la-plata">La Plata</button>
+        <button class="region-btn" data-region="Berisso">Berisso</button>
+        <button class="region-btn" data-region="Ensenada">Ensenada</button>
+        <button class="region-btn" data-region="Nacional">Nacional</button>
+      </div>
+      <div class="region-botones fila-2">
+        <button class="region-btn" data-region="Otros">Otros</button>
+        <button class="region-btn" data-region="Todos">Todos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </html>
