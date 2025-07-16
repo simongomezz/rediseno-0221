@@ -70,6 +70,105 @@ for (let i = 1; i <= totalDays; i++) {
   calendar.appendChild(day);
 }
 
+// ================== FILTROS ==================
+
+const filtroOpciones = document.querySelectorAll('.filtro-opcion');
+
+filtroOpciones.forEach(opcion => {
+  opcion.addEventListener('click', () => {
+    filtroOpciones.forEach(o => o.classList.remove('selected'));
+    opcion.classList.add('selected');
+  });
+});
+
+// ================== CHECK ==================
+
+const checkConfirm = document.getElementById('checkConfirm');
+const filtrosContainer = document.querySelector('.agenda-filtros');
+
+checkConfirm.addEventListener('click', () => {
+  const selectedDay = document.querySelector('.day.selected');
+  const selectedFiltro = document.querySelector('.filtro-opcion.selected');
+
+  if (selectedDay && selectedFiltro) {
+    filtrosContainer.style.display = 'none';
+    checkConfirm.style.display = 'none';
+
+    const nuevaVista = document.createElement('div');
+    nuevaVista.className = 'agenda-plan-vista';
+
+    const planes = [
+      { titulo: 'CINE', imagen: 'img/Calendario/plancine.png' },
+      { titulo: 'MUESTRAS', imagen: 'img/Calendario/planmuestras.png' },
+      { titulo: 'RECITALES', imagen: 'img/Calendario/planrecitales.png' },
+      { titulo: 'COMIDA', imagen: 'img/Calendario/plancomida.png' }
+    ];
+
+    planes.forEach(plan => {
+      const contenedor = document.createElement('div');
+      contenedor.className = 'plan-card';
+
+      const titulo = document.createElement('div');
+      titulo.className = 'plan-titulo';
+      titulo.textContent = plan.titulo;
+
+      const imagen = document.createElement('img');
+      imagen.src = plan.imagen;
+      imagen.alt = plan.titulo;
+
+      contenedor.appendChild(titulo);
+      contenedor.appendChild(imagen);
+      nuevaVista.appendChild(contenedor);
+    });
+
+    filtrosContainer.parentElement.appendChild(nuevaVista);
+  } else {
+    alert('Seleccioná un día y una opción antes de continuar.');
+  }
+});
+
+// ================== PLANES ==================
+
+document.addEventListener('click', (e) => {
+  const planCard = e.target.closest('.plan-card');
+
+  if (planCard) {
+    // Marcar como seleccionado
+    document.querySelectorAll('.plan-card').forEach(p => p.classList.remove('selected'));
+    planCard.classList.add('selected');
+
+    // Esperar 400ms antes de ocultarlos, para que se vea la selección
+    setTimeout(() => {
+      document.querySelectorAll('.plan-card').forEach(p => p.style.display = 'none');
+
+      // Aquí podés mostrar la sección siguiente si querés
+      // document.querySelector('.ultima-seccion').style.display = 'block';
+    }, 400);
+  }
+});
+
+// ================== DESPLEGABLE DERECHO ==================
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleDesplegable = document.getElementById('toggle-desplegable');
+    const menuExtendido = document.getElementById('menuExtendido');
+    const menuDesplegableFijo = document.getElementById('menuDesplegableFijo');
+    const cerrarDesplegable = document.getElementById('cerrarDesplegable');
+
+    toggleDesplegable.addEventListener('click', () => {
+      // Ocultar el menú fijo completo
+      menuDesplegableFijo.style.display = 'none';
+      // Mostrar el menú extendido
+      menuExtendido.style.display = 'block';
+    });
+
+    cerrarDesplegable.addEventListener('click', () => {
+      // Ocultar el menú extendido
+      menuExtendido.style.display = 'none';
+      // Volver a mostrar el menú fijo
+      menuDesplegableFijo.style.display = 'block';
+    });
+  });
+
 // ================== CARRUSEL CON BAJADA ==================
 
 const carouselInner = document.querySelector('.carousel-inner');
@@ -180,6 +279,18 @@ carouselInner.addEventListener('touchmove', (e) => {
     const moved = e.touches[0].clientX - startX;
     carouselInner.style.transform = `translateX(${-currentIndex * carouselInner.clientWidth + moved}px)`;
   }
+});
+
+// ========== Botón "No me interesa" salta a la siguiente slide ==========
+document.querySelectorAll('.btn-interes').forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.textContent.includes('No me interesa')) {
+      pauseAutoplay(); // Pausa autoplay para evitar conflicto
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+      resumeAutoplay();
+    }
+  });
 });
 
 // ================== MODAL DE REGIÓN ==================
