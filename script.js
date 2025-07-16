@@ -85,6 +85,7 @@ filtroOpciones.forEach(opcion => {
 
 const checkConfirm = document.getElementById('checkConfirm');
 const filtrosContainer = document.querySelector('.agenda-filtros');
+const planesContainer = document.querySelector('.agenda-plan-vista');
 
 checkConfirm.addEventListener('click', () => {
   const selectedDay = document.querySelector('.day.selected');
@@ -94,8 +95,11 @@ checkConfirm.addEventListener('click', () => {
     filtrosContainer.style.display = 'none';
     checkConfirm.style.display = 'none';
 
-    const nuevaVista = document.createElement('div');
-    nuevaVista.className = 'agenda-plan-vista';
+    // Mostrar el contenedor de planes
+    planesContainer.style.display = 'grid';
+
+    // Vaciar por si ya había algo
+    planesContainer.innerHTML = '';
 
     const planes = [
       { titulo: 'CINE', imagen: 'img/Calendario/plancine.png' },
@@ -118,14 +122,13 @@ checkConfirm.addEventListener('click', () => {
 
       contenedor.appendChild(titulo);
       contenedor.appendChild(imagen);
-      nuevaVista.appendChild(contenedor);
+      planesContainer.appendChild(contenedor);
     });
-
-    filtrosContainer.parentElement.appendChild(nuevaVista);
   } else {
     alert('Seleccioná un día y una opción antes de continuar.');
   }
 });
+
 
 // ================== PLANES ==================
 
@@ -137,15 +140,56 @@ document.addEventListener('click', (e) => {
     document.querySelectorAll('.plan-card').forEach(p => p.classList.remove('selected'));
     planCard.classList.add('selected');
 
-    // Esperar 400ms antes de ocultarlos, para que se vea la selección
+    // Esperar para mostrar la selección
     setTimeout(() => {
       document.querySelectorAll('.plan-card').forEach(p => p.style.display = 'none');
 
-      // Aquí podés mostrar la sección siguiente si querés
-      // document.querySelector('.ultima-seccion').style.display = 'block';
+      // Mostrar sección de noticias
+      const noticiasContainer = document.createElement('div');
+      noticiasContainer.className = 'agenda-noticias';
+
+      const noticias = [
+        {
+          titulo: 'Feria del Vino de la Costa',
+          descripcion: 'Se celebrará en el Gimnasio Municipal (9 y 169) con entrada libre y gratuita.',
+          imagen: 'Img/Calendario/noticiacalendario1.png'
+        },
+        {
+          titulo: 'Festival Ribera Música',
+          descripcion: 'Evento que combina música en vivo, gastronomía y compromiso social en un entorno natural a la vera del río.',
+          imagen: 'Img/Calendario/noticiacalendario2.png'
+        }
+      ];
+
+      noticias.forEach(noticia => {
+        const card = document.createElement('div');
+        card.className = 'noticia-card';
+
+        const texto = document.createElement('div');
+        texto.className = 'noticia-texto';
+
+        const h3 = document.createElement('h3');
+        h3.textContent = noticia.titulo;
+
+        const p = document.createElement('p');
+        p.textContent = noticia.descripcion;
+
+        const img = document.createElement('img');
+        img.src = noticia.imagen;
+        img.alt = noticia.titulo;
+
+        texto.appendChild(h3);
+        texto.appendChild(p);
+        card.appendChild(texto);
+        card.appendChild(img);
+        noticiasContainer.appendChild(card);
+      });
+
+      document.querySelector('.agenda-contenedor').appendChild(noticiasContainer);
     }, 400);
   }
 });
+
 
 // ================== DESPLEGABLE DERECHO ==================
   document.addEventListener("DOMContentLoaded", () => {
@@ -321,4 +365,16 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.style.display = 'flex';
     regionDisplay.style.display = 'none';
   });
+});
+
+// ================== CÓDIGO PARA LA PÁGINA DE NOTICIAS ==================
+document.addEventListener('DOMContentLoaded', () => {
+  const unlpArticle = document.querySelector('.noticia-destacada h2');
+  if (unlpArticle && unlpArticle.textContent.includes('La UNLP fue reconocida')) {
+    unlpArticle.parentElement.addEventListener('click', () => {
+      window.location.href = 'nota-unlp.html';
+    });
+    // Opcional: cambiar el cursor a pointer
+    unlpArticle.parentElement.style.cursor = 'pointer';
+  }
 });

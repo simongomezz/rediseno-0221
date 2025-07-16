@@ -1167,7 +1167,8 @@ body {
   color: #fff;
   width: 500px;
   height: 500px;
-  margin: auto;
+  margin-left: 100px; /* o el valor que veas necesario para alinearlo */
+  margin-right: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border: 2px solid white;
 }
@@ -1275,6 +1276,8 @@ body {
   align-items: center;
   gap: 20px;
   margin-bottom: 15px;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .filtro-opcion img {
@@ -1293,11 +1296,6 @@ body {
   border: 2px solid #FFA8CE;
   border-radius: 30px;
   padding: 10px 15px;
-}
-
-.filtro-opcion {
-  transition: all 0.2s ease;
-  cursor: pointer;
 }
 
 .check-circulo {
@@ -1333,6 +1331,8 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .plan-card img {
@@ -1350,11 +1350,52 @@ body {
 }
 
 .plan-card.selected {
-  outline: 5px solid #FFA8CE;
+  outline: 6px solid #FFA8CE;
   border-radius: 30px;
-  padding: 8px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.2s ease;
+}
+/* ================== NOTICIAS ================== */
+
+.agenda-noticias {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: -30px;
+  align-items: center;
+}
+
+.noticia-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #C47095, #000000);
+  width: 624px;
+  height: 369px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 168, 206, 0.3);
+  border: 2px solid #FFA8CE;
+  overflow: hidden;
+}
+
+.noticia-card img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.noticia-texto h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.noticia-texto p {
+  font-size: 16px;
+  font-weight: normal;
 }
 
 /* FOOTER */
@@ -1497,4 +1538,163 @@ body {
 
 .region-display {
   cursor: pointer;
+}
+
+/* ========= POLICIALES  ========= */
+
+h1, h2, h3, p {
+  color: white;
+}
+
+.policiales-header {
+  margin-top: 40px;
+}
+.titulo-policiales {
+  font-size: 55px;
+  font-weight: bold;
+  margin-left: 25px !important;
+}
+.linea-policiales {
+  background-color: white;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.policiales-principal {
+  display: flex;
+  flex-direction: row;     
+  align-items: center;
+  gap: 40px;                
+  justify-content: center;
+}
+
+.policiales-principal h3 {
+  font-size: 50px;
+
+  font-weight: bold;
+  margin-bottom: 70px;
+}
+.policiales-principal p {
+   font-size: 35px;
+  text-align: left;
+  max-width: 600px;
+
+  line-height: 40px;
+}
+.acomodar-boton {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+   background-color: rgba(156, 155, 155, 0.3);
+}
+.policiales-img-reacciones .reacciones {
+  width: 100%;
+  justify-content: flex-end;
+  color: white;
+}
+
+
+/* --- SOLO PARA EL BLOQUE DE LAS MAS CLICKEADAS --- */
+.mas-clickeadas-contenedor {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.noticia-destacada {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.notas-scroll {
+  width: 550px;
+  max-height: 600px;
+  margin-top: 50px;
+  overflow-y: auto;
+  padding: 12px 8px;
+  flex-shrink: 0;
+}
+
+.detalle-linea {
+  width: 90%;
+  height: 2px;
+  background-color: #444;
+  margin: 20px 0;
+}
+
+.reacciones {
+  width: 100%;
+  color: white;
+}
+
+/* ========= NOTA UNLP  ========= */
+.unlp-nota {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 627px;
+}
+
+.unlp-nota h1{
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  padding: 30px;
+}
+
+.unlp-principal {
+  background: linear-gradient(
+    to top,
+    #000000cc 0%,
+    #CA6B94 10%,
+    #FFA8CE00 50%
+  );
+  position: relative;
+  width: 100%;
+}
+
+.unlp-foot {
+  background: black;
+  height: 180px;
+  color: white;
+  padding: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.unlp-foot h2{
+  margin-left: 15px;
+  font-size: 28px;
+}
+
+.unlp-date {
+  color: #f5a0c3;
+  font-size: 22px;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+.mas-clickeadas-contenedor {
+  margin-top: 80px;
+}
+
+.noticia-unlp{
+  font-size: 24px;
+  margin-left: 40px;
+  line-height: 1.7;
+}
+
+.noticia-unlp p {
+  margin-bottom: 30px;
+}
+
+.lateral{
+  margin-right: 70px;
 }

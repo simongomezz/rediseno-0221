@@ -563,58 +563,71 @@
   </section>
 
   <section class="agenda-cultural">
-    <div class="apartado-header-calendario">
-      <img src="img/Secciones/logo-0221.png" alt="0221 Logo" class="apartado-logo">
-      <div class="linea-vertical"></div>
-      <h2>¿Que te interesa hoy?</h2>
-    </div>
+  <div class="apartado-header-calendario">
+    <img src="img/Secciones/logo-0221.png" alt="0221 Logo" class="apartado-logo">
+    <div class="linea-vertical"></div>
+    <h2>¿Que te interesa hoy?</h2>
+  </div>
 
-    <div class="agenda-contenedor">
-      <!-- CALENDARIO -->
-      <div class="agenda-calendario">
-        <div id="calendar">
-          <div class="calendar-header">
-            <div class="calendar-title">
-              <h3>Junio <span class="year">2025</span></h3>
-              <button class="inline-arrow">❯</button>
-            </div>
-            <div class="calendar-arrows">
-              <button class="arrow prev-month">❮</button>
-              <button class="arrow next-month">❯</button>
-            </div>
+  <div class="agenda-contenedor">
+    <!-- CALENDARIO -->
+    <div class="agenda-calendario">
+      <div id="calendar">
+        <div class="calendar-header">
+          <div class="calendar-title">
+            <h3>Junio <span class="year">2025</span></h3>
+            <button class="inline-arrow">❯</button>
+          </div>
+          <div class="calendar-arrows">
+            <button class="arrow prev-month">❮</button>
+            <button class="arrow next-month">❯</button>
           </div>
         </div>
-        <p class="filtro-texto">Busca tu día para disfrutar</p>
-        <img src="img/Reacciones/emojifeliz.png" alt="Cara sonriente" class="filtro-icono">
       </div>
-      <div class="agenda-filtros">
-        <div class="filtro-opcion">
-          <img src="img/Calendario/iconocalendario1.png" alt="En pareja">
-          <span>EN PAREJA</span>
-        </div>
-        <div class="filtro-opcion">
-          <img src="img/Calendario/iconocalendario2.png" alt="Con amigos">
-          <span>CON AMIGOS</span>
-        </div>
-        <div class="filtro-opcion">
-          <img src="img/Calendario/iconocalendario3.png" alt="En familia">
-          <span>EN FAMILIA</span>
-        </div>
-        <div class="filtro-opcion">
-          <img src="img/Calendario/iconocalendario4.png" alt="Primera cita">
-          <span>PRIMERA CITA</span>
-        </div>
-        <div class="filtro-opcion">
-          <img src="img/Calendario/iconocalendario5.png" alt="Conocer gente">
-          <span>CONOCER GENTE</span>
-        </div>
-      </div>
-      <div class="check-circulo" id="checkConfirm">
-        <img src="img/Calendario/checkinterno.png" alt="Check interno">
-      </div>
-
+      <p class="filtro-texto">Busca tu día para disfrutar</p>
+      <img src="img/Reacciones/emojifeliz.png" alt="Cara sonriente" class="filtro-icono">
     </div>
-  </section>
+
+<!-- LATERAL DERECHO (Filtros, luego planes, luego noticias) -->
+<div class="agenda-lateral">
+  <!-- FILTROS -->
+  <div class="agenda-filtros">
+    <div class="filtro-opcion">
+      <img src="img/Calendario/iconocalendario1.png" alt="En pareja">
+      <span>EN PAREJA</span>
+    </div>
+    <div class="filtro-opcion">
+      <img src="img/Calendario/iconocalendario2.png" alt="Con amigos">
+      <span>CON AMIGOS</span>
+    </div>
+    <div class="filtro-opcion">
+      <img src="img/Calendario/iconocalendario3.png" alt="En familia">
+      <span>EN FAMILIA</span>
+    </div>
+    <div class="filtro-opcion">
+      <img src="img/Calendario/iconocalendario4.png" alt="Primera cita">
+      <span>PRIMERA CITA</span>
+    </div>
+    <div class="filtro-opcion">
+      <img src="img/Calendario/iconocalendario5.png" alt="Conocer gente">
+      <span>CONOCER GENTE</span>
+    </div>
+  </div>
+
+  <!-- CHECK -->
+  <div class="check-circulo" id="checkConfirm">
+    <img src="img/Calendario/checkinterno.png" alt="Check interno">
+  </div>
+
+  <!-- PLANES (se insertan dinámicamente) -->
+  <div class="agenda-plan-vista" style="display: none;"></div>
+
+  <!-- NOTICIAS (opcional) -->
+  <div class="agenda-noticias-final" style="display: none;"></div>
+</div>
+
+  </div>
+</section>
 
   <footer class="footer">
     <div class="social">
