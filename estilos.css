@@ -1637,6 +1637,7 @@ h1, h2, h3, p {
   justify-content: center;
   color: white;
   height: 627px;
+  
 }
 
 .unlp-nota h1{
@@ -1691,10 +1692,44 @@ h1, h2, h3, p {
   line-height: 1.7;
 }
 
+.noticia-unlp h2{
+  font-size: 24px;
+  line-height: 1.7;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.noticia-unlp h6{
+  font-weight: 200;
+  font-size: 24px;
+  color: white;
+  line-height: 1.7;
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
 .noticia-unlp p {
   margin-bottom: 30px;
 }
 
 .lateral{
   margin-right: 70px;
+}
+
+.reacciona-nota h2{
+ font-size: 34px;
+}
+
+.apartado-contenido-nota {
+  width: 100%;
+  clear: both;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-image: url('img/Secciones/fondoseccion.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 442px;
 }
