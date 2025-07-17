@@ -300,15 +300,19 @@ body {
   position: absolute;
   top: -10px;
   right: 0;
-  width: 380px;
-  height: 480px;
+  width: 350px;
+  height: 530px;
   background-color: #00000081;
   border: 2px solid #FFA8CE;
+  border-right: 0px;
   z-index: 15;
   border-radius: 20px 0 0 20px;
   box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.4);
   padding: 20px;
+  padding-left: 40px;
   color: white;
+
+  margin-top: 80px;
 }
 
 .menu-contenido-inicial {
@@ -343,9 +347,13 @@ body {
   transform: rotate(180deg);
 }
 
+.color-sub {
+  color: #888888;
+}
+
 .bloque-clima {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 .bloque-clima h1 {
@@ -355,8 +363,17 @@ body {
 
 .bloque-clima span,
 .bloque-clima p {
-  font-size: 16px;
-  margin: 4px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.titulo-clima {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  color: #FFA8CE;
+  font-size: 28px;
 }
 
 .iconos-indispensables {
@@ -364,6 +381,7 @@ body {
   justify-content: center;
   gap: 10px;
   margin: 10px 0;
+  border: #FFA8CE 2px solid;
 }
 
 .iconos-indispensables img {
@@ -374,14 +392,22 @@ body {
 
 .mensaje-indispensable {
   font-size: 14px;
-  padding: 6px 12px;
   border-radius: 10px;
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.detalle-linea-clima {
+  width: 98%;
+  height: 2px;
+  background-color: #e7e7e7;
+  margin: 0 auto;
+  margin-top: 0.1rem;
 }
 
 .bloque-transporte {
-  margin-top: 30px;
+  margin-top: 15px;
   text-align: left;
   padding: 0 20px;
 }
@@ -420,7 +446,7 @@ body {
 
 .titulo-transporte h4 {
   margin: 0;
-  font-size: 24px;
+  font-size: 26px;
   color: #FFA8CE;
 }
 
@@ -438,12 +464,13 @@ body {
 }
 
 .item-transporte {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .texto-transporte {
-  font-size: 16px;
+  font-size: 18px;
   color: white;
+  font-weight: 700;
 }
 
 /*  =========  REDES SOCIALES  =========  */
@@ -961,6 +988,7 @@ body {
   align-items: center;
   gap: 10px;
   margin-bottom: 0;
+  margin-top: 25px;
   padding-left: 2rem;
 }
 

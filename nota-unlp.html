@@ -168,27 +168,55 @@
   </main>
 
   <footer class="footer">
-    <div class="social">
-      <p>Seguinos en todos lados!</p>
-      <div class="icons">
-        <img src="img/Footer/Instagram.png" alt="Instagram">
-        <img src="img/Footer/Youtube.png" alt="YouTube">
-        <img src="img/Footer/TikTok.png" alt="TikTok">
-        <img src="img/Footer/X.png" alt="X">
-        <img src="img/Footer/Facebook.png" alt="Facebook">
-        <img src="img/Footer/Linkedin.png" alt="LinkedIn">
+      <div class="social">
+        <p>Seguinos en todos lados!</p>
+        <div class="icons">
+          <a href="https://www.instagram.com/0221comar/">
+          <img src="img/Footer/Instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/channel/UCWFylKzypM2c1aRt5SImiuQ">
+            <img src="img/Footer/Youtube.png" alt="YouTube">
+          </a>
+          <a href="https://www.tiktok.com/@0221comar">
+            <img src="img/Footer/TikTok.png" alt="TikTok">
+          </a>
+          <a href="https://x.com/0221comar"> 
+            <img src="img/Footer/X.png" alt="X">
+          </a>
+          <a href="https://www.facebook.com/0221LaPlata">
+            <img src="img/Footer/Facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.linkedin.com/company/0221comar/?originalSubdomain=ar">
+            <img src="img/Footer/Linkedin.png" alt="LinkedIn">
+          </a>
+        </div>
       </div>
-    </div>
+
     <div class="links">
       <a href="#">Términos y Condiciones</a>
       <a href="#">Políticas de privacidad</a>
     </div>
+
     <div class="brands">
       <img src="img/Footer/logoadepa.png" alt="ADEPA">
       <img src="img/Footer/logo0221.png" alt="0221.com.ar">
       <img src="img/Footer/logoaglp.png" alt="AGLP">
     </div>
   </footer>
+
   <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.reacciones .emoji img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        if (!img.src.endsWith('activado.png')) {
+          img.src = img.src.replace('.png', 'activado.png');
+          img.classList.add('activo');
+        } else {
+          img.src = img.src.replace('activado.png', '.png');
+          img.classList.remove('activo');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
